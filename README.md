@@ -10,3 +10,5 @@ http://maps.googleapis.com/maps/api/staticmap?size=600x300&sensor=false&markers=
 
 AIzaSyBZh3BSaHzLRuVQTka_NpTHmvLqg5sWdrM
 
+
+Copy files to `~/Documents/Anki/ core.media something`
