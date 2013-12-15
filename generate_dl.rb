@@ -1,5 +1,6 @@
 require 'csv'
 require 'uri'
+require 'digest'
 
 CSV.foreach(ARGV[0]) do |row|
   url = 'http://maps.googleapis.com/maps/api/staticmap?size=600x300&sensor=false&key
@@ -8,5 +9,7 @@ CSV.foreach(ARGV[0]) do |row|
   addr = row[0]
   clean_addr = addr.gsub(/ [A-Z]'/, '')
   full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
-  puts full_addr
+  uri_addr = URI.escape(full_addr)
+  filename = Digest::MD5.hexdigest(addr)
+  puts url + uri_addr + "\n  " + 'out=' + filename
 end
