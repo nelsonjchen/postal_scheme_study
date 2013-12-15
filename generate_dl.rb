@@ -11,6 +11,6 @@ File.open('aria2dl.txt', 'w') do |file|
     full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
     uri_addr = URI.escape(full_addr)
     filename = Digest::MD5.hexdigest(addr)
-    file.puts url + uri_addr + "\n  " + 'out=' + filename + ".png\n  " + 'dir=downloads/'
+    file.puts url + uri_addr + "\n  " + 'out=' + filename + ".png\n  " + 'dir=downloads'
   end
 end
