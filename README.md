@@ -1,7 +1,8 @@
+# Nothing to see here folks
 
-* Generate List of Google Map Static Map URLs for Aria2c to download. (MD5 of the street address).png output
+* Generate List of Google Map Static Map URLs for Aria2c to download. (MD5 of the street address).png output.
 
-* Generate Anki importable
+* Generate Anki importable, with img src as MD5 of name.
 
 http://sourceforge.net/apps/trac/aria2/wiki/UsageExample#InputFile
 
