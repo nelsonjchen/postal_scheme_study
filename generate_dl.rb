@@ -2,7 +2,7 @@ require 'csv'
 require 'uri'
 require 'digest'
 
-File.open('aria2dl.txt', 'w') do |file|
+File.open('aria2_import.txt', 'w') do |file|
   CSV.foreach(ARGV[0]) do |row|
     url = 'http://maps.googleapis.com/maps/api/staticmap?size=600x300&sensor=false&key=AIzaSyBZh3BSaHzLRuVQTka_NpTHmvLqg5sWdrM&markers='
     # Delete own notation for odd or even
