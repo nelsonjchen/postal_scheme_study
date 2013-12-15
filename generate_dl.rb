@@ -11,5 +11,5 @@ CSV.foreach(ARGV[0]) do |row|
   full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
   uri_addr = URI.escape(full_addr)
   filename = Digest::MD5.hexdigest(addr)
-  puts url + uri_addr + "\n  " + 'out=' + filename
+  puts url + uri_addr + "\n  " + 'out=' + filename + "\n  " + 'dir=downloads/'
 end
