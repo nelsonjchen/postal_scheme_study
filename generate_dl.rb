@@ -20,7 +20,7 @@ File.open('aria2_import.txt', 'w') do |file|
     clean_addr = addr.gsub(/ [A-Z]'/, '')
     full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
     uri_addr = URI.escape(full_addr)
-    filename = Digest::MD5.hexdigest(eg_addr) + '.png'
+    filename = Digest::MD5.hexdigest(addr) + '.png'
     file.puts url + uri_addr + "\n  " + 'out=' + filename + "\n  " + 'dir=downloads'
   end
 end

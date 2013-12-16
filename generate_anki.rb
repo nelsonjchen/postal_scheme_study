@@ -20,8 +20,8 @@ File.open('anki_import.txt', 'w') do |file|
     clean_addr = addr.gsub(/ [A-Z]'/, '')
     full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
     uri_addr = URI.escape(full_addr)
-    filename = Digest::MD5.hexdigest(eg_addr) + '.png'
-    file.puts full_addr + '<br/>' + '<img src=\'' + filename + '\'/><br/> eg. ' + eg_addr + ';' +
+    filename = Digest::MD5.hexdigest(addr) + '.png'
+    file.puts full_addr + '<br/>' + '<img src=\'' + filename + '\'/><br/>e.g. ' + eg_addr + ';' +
         carrier
   end
 end
