@@ -4,7 +4,6 @@ require 'digest'
 
 File.open('anki_import.txt', 'w') do |file|
   CSV.foreach(ARGV[0]) do |row|
-    # Delete own notation for odd or even
     addr = row[0]
     carrier = row[1]
 
@@ -16,6 +15,7 @@ File.open('anki_import.txt', 'w') do |file|
     example_addr_number = (example_addr_begin_number + example_addr_end_number)/2
     eg_addr = addr.gsub(number_regex, example_addr_number.to_s)
 
+    # Delete own notation for odd or even
     clean_addr = eg_addr.gsub(/ [A-Z]'/, '')
     full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
     uri_addr = URI.escape(full_addr)
