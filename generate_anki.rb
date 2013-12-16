@@ -10,6 +10,7 @@ File.open('anki_import.txt', 'w') do |file|
 
     number_regex = /^(\d+)-(\d+)/
     numbers = number_regex.match(addr)
+    puts addr
     example_addr_begin_number = numbers[1].to_i
     example_addr_end_number = numbers[2].to_i
     example_addr_number = (example_addr_begin_number + example_addr_end_number)/2
