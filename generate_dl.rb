@@ -13,10 +13,11 @@ File.open('aria2_import.txt', 'w') do |file|
     example_addr_begin_number = numbers[1].to_i
     example_addr_end_number = numbers[2].to_i
     example_addr_number = (example_addr_begin_number + example_addr_end_number)/2
+    example_addr_number = example_addr_number - (example_addr_number % 2)
     eg_addr = addr.gsub(number_regex, example_addr_number.to_s)
 
     # Delete own notation for odd or even
-    clean_addr = eg_addr.gsub(/ [A-Z]'/, '')
+    clean_addr = addr.gsub(/ [A-Z]'/, '')
     full_addr = clean_addr + ', La Puente, CA ' + ARGV[1]
     uri_addr = URI.escape(full_addr)
     filename = Digest::MD5.hexdigest(eg_addr) + '.png'
